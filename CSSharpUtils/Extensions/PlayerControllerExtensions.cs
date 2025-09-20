@@ -127,7 +127,6 @@ public static class PlayerControllerExtensions
     /// <param name="playerController">The player controller to set armor for.</param>
     /// <param name="armor">The armor value to set.</param>
     /// <param name="helmet">Whether to include a helmet.</param>
-    /// <param name="heavy">Whether to include heavy armor.</param>
     public static void SetArmor(this CCSPlayerController? playerController, int armor, bool helmet = false)
     {
         if (!playerController.IsPlayer() || !playerController!.PawnIsAlive)
