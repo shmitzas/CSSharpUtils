@@ -128,7 +128,7 @@ public static class PlayerControllerExtensions
     /// <param name="armor">The armor value to set.</param>
     /// <param name="helmet">Whether to include a helmet.</param>
     /// <param name="heavy">Whether to include heavy armor.</param>
-    public static void SetArmor(this CCSPlayerController? playerController, int armor, bool helmet = false, bool heavy = false)
+    public static void SetArmor(this CCSPlayerController? playerController, int armor, bool helmet = false)
     {
         if (!playerController.IsPlayer() || !playerController!.PawnIsAlive)
             return;
@@ -136,12 +136,11 @@ public static class PlayerControllerExtensions
         playerController.PlayerPawn.Value!.ArmorValue = armor;
         Utilities.SetStateChanged(playerController.PlayerPawn.Value, "CCSPlayerPawnBase", "m_ArmorValue");
 
-        if (!helmet && !heavy)
+        if (!helmet)
             return;
 
         var services = new CCSPlayer_ItemServices(playerController.PlayerPawn.Value.ItemServices!.Handle);
         services.HasHelmet = helmet;
-        services.HasHeavyArmor = heavy;
         Utilities.SetStateChanged(playerController.PlayerPawn.Value, "CBasePlayerPawn", "m_pItemServices");
     }
     
