@@ -133,7 +133,7 @@ public static class PlayerControllerExtensions
             return;
 
         playerController.PlayerPawn.Value!.ArmorValue = armor;
-        Utilities.SetStateChanged(playerController.PlayerPawn.Value, "CCSPlayerPawnBase", "m_ArmorValue");
+        Utilities.SetStateChanged(playerController.PlayerPawn.Value, "CCSPlayerPawn", "m_ArmorValue");
 
         if (!helmet)
             return;
