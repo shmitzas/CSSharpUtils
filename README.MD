@@ -47,8 +47,8 @@ playerController.SetName("imi-tat0r");
 playerController.SetClantag("imi-tat0r.net");
 playerController.SetClantag(); // removes the clantag
 
-// setting armor + helmet, not heavy
-playerController.SetArmor(100, true, false);
+// setting armor + helmet
+playerController.SetArmor(100, true);
 
 // setting health
 playerController.SetHealth(69); // sets health to 69 
